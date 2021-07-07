@@ -18,11 +18,11 @@ node {
 
   stage ('Terraform Plan') {
     sh 'terraform -chdir="./terraform" init'
-    sh 'terraform plan -chdir="./terraform" -no-color -out=create.tfplan'
+    sh 'terraform -chdir="./terraform" plan -no-color -out=create.tfplan'
   }
 
   stage ('Terraform Apply') {
-    sh 'terraform apply -no-color -chdir="./terraform" -auto-approve create.tfplan'
+    sh 'terraform -chdir="./terraform" apply -no-color -auto-approve create.tfplan'
   }
 
   stage ('Post Run Tests') {
