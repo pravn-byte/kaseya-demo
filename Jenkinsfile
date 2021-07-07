@@ -17,7 +17,7 @@ node {
   }
 
   stage ('Terraform Plan') {
-    sh 'cd terraform'
+    sh 'cd /var/lib/jenkins/workspace/jenkins-terraform-integration/terraform'
     sh 'terraform init'
     sh 'terraform plan -no-color -out=create.tfplan'
   }
