@@ -11,11 +11,8 @@ env.AWS_ACCESS_KEY_ID = AWS_ACCESS_KEY_ID
 env.AWS_SECRET_ACCESS_KEY = AWS_SECRET_ACCESS_KEY
 
 node {
-  env.PATH += ":/opt/terraform_0.7.13/"
-
   stage ('Checkout') {
-    git branch: 'master',
-       credentialsId: 'bitbucket',
+    git branch: 'main',
        url: 'https://github.com/pravn-byte/kaseya-demo.git'
   }
 
